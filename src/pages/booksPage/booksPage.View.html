@@ -1,0 +1,10 @@
+<spinner ng-show="bp.showSpinner"></spinner>
+<header on-filters-apply="bp.filter(data)"></header>
+<div ng-if="bp.initialized" id="content" books="bp.books" on-scroll="bp.onScroll({toRender: toRender})" books-virtual-scroll-jump>
+    <div class="container">
+        <div class="books">
+            <books-container books="bp.renderBooks">
+            </books-container>
+        </div>
+    </div>
+</div>

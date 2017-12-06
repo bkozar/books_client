@@ -1,0 +1,44 @@
+<div class="header">
+    <div class="container">
+        <div class="input-container">
+            <div class="form-group sort-by">
+                <label for="sortBy-filter">Sort by</label>
+                <div>
+                    <ui-select id="sortBy-filter" ng-model="h.model.sortBy" theme="bootstrap">
+                        <ui-select-match placeholder="Select">{{$select.selected.label}}</ui-select-match>
+                        <ui-select-choices repeat="sortBy in h.sortByOptions">
+                            <div ng-bind="sortBy.label | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="form-group sort-by-desc">
+                <label for="sortBy-descending">Desc</label>
+                <div>
+                    <toggle id="sortBy-descending" ng-model="h.model.sortDescending"></toggle>
+                </div>
+            </div>
+        </div>
+        <div class="input-container">
+            <div class="form-group">
+                    <label>Genres</label>
+                <div>
+                    <div ng-dropdown-multiselect="" id="genres-filter" options="h.genres" selected-model="h.model.genres"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="genders-filter">Gender</label>
+                <ui-select id="genders-filter" ng-model="h.model.genders" theme="bootstrap">
+                    <ui-select-match placeholder="Select">{{$select.selected.label}}</ui-select-match>
+                    <ui-select-choices repeat="gender in h.genderOptions">
+                        <div ng-bind="gender.label | highlight: $select.search"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="input-container">
+            <button class="btn btn-primary" ng-click="h.onApplyClick()">Apply</button>
+            <button class="btn btn-default" ng-click="h.onResetClick()">Reset</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<figure ng-class="{'horror-mark': b.hasHalloweenMark(), 'gold-background': b.hasFinanceMark() }">
+    <div class="picture">
+        <img class="book-pic" ng-src="../images/{{:: b.bookDetails.image}}.jpg"/>
+    </div>
+    <div class="description">
+        <div ng-class="{ 'blood-shadow' : b.hasHalloweenMark(), 'gold-text': b.hasFinanceMark() }">
+            <div>
+                <span class="title">{{:: b.bookDetails.title}}</span>
+            </div>
+            <div class="author">
+                by <span class="author-name">{{:: b.bookDetails.author}}</span>
+            </div>
+        </div>
+        <div class="genre" ng-class=":: b.bookDetails.genre">{{:: b.bookDetails.genre.toUpperCase()}}</div>
+        <div class="published">Published <span class="date">{{:: b.bookDetails.publishedDate.format('DD MMM YYYY')}}</span></div>
+    </div>
+    <div ng-if=":: b.hasFinanceMark()">
+        <coin></coin>
+    </div>
+    <div ng-if=":: b.hasHalloweenMark()">
+        <ghost-animation></ghost-animation>
+    </div>
+</figure>

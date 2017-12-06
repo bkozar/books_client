@@ -1,0 +1,41 @@
+header {
+    div.header {
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        background-color: white;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+        border-bottom-color: @decor-color;
+
+        div.container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 90px;
+            div.input-container {
+                display: inline-block;
+                vertical-align: middle;
+
+                div.form-group {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+
+                #sortBy-filter {
+                    width: 115px;
+                }
+
+                #genders-filter {
+                    width: 80px;
+                }
+
+                button.sort-by-btn {
+                    width: 100px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
